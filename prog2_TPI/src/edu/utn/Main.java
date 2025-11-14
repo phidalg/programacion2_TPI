@@ -1,12 +1,22 @@
 package edu.utn;
 
-/**
- * @author Grupo 90
- */
 public class Main {
-
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("╔════════════════════════════════════════════════════════╗");
+        System.out.println("║  SISTEMA DE GESTIÓN DE BIBLIOTECA - TPI Programación 2 ║");
+        System.out.println("╚════════════════════════════════════════════════════════╝");
+        System.out.println();
+        
+        try {
+            AppMenu menu = new AppMenu();
+            menu.mostrarMenuPrincipal();
+        } catch (Exception e) {
+            System.err.println("\n❌ Error fatal: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        System.out.println("\n╔════════════════════════════════════════════════════════╗");
+        System.out.println("║              Sistema finalizado correctamente          ║");
+        System.out.println("╚════════════════════════════════════════════════════════╝");
     }
-    
 }
