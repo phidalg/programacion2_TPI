@@ -39,7 +39,7 @@ cd programacion2_TPI
 
 ### 2. Crear la Base de Datos
 
-### Desde phpMyAdmin (XAMPP)
+### Desde phpMyAdmin 
 
 1. Iniciar **XAMPP** (Apache + MySQL)
 2. Abrir `http://localhost/phpmyadmin`
