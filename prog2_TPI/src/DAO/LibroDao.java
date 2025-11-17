@@ -23,10 +23,8 @@ public class LibroDao implements GenericDAO<Libro> {
             stmt.setString(3, libro.getEditorial());
             stmt.setInt(4, libro.getAnioEdicion());
             
-            // 🔧 FIX: Ejecutar el INSERT
             stmt.executeUpdate();
             
-            // 🔧 FIX: Obtener el ID generado
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
                     libro.setId(rs.getLong(1));
@@ -69,7 +67,6 @@ public class LibroDao implements GenericDAO<Libro> {
     
     @Override 
     public void actualizar(Libro libro, Connection conn) throws Exception {
-        // 🔧 FIX: Nombre correcto de columna con guión bajo
         String sql = "UPDATE libros SET eliminado = ?, titulo = ?, autor = ?, editorial = ?, anio_edicion = ? WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setBoolean(1, libro.isEliminado());
@@ -91,9 +88,7 @@ public class LibroDao implements GenericDAO<Libro> {
         }
     }
     
-    /**
-     * 🆕 NUEVO: Buscar libro por ISBN (busca a través de su ficha)
-     */
+
     public Libro buscarPorIsbn(String isbn, Connection conn) throws Exception {
         String sql = "SELECT l.* FROM libros l " +
                      "INNER JOIN fichas_bibliograficas f ON l.id = f.id_libro " +
@@ -111,9 +106,7 @@ public class LibroDao implements GenericDAO<Libro> {
         return null;
     }
     
-    /**
-     * 🆕 NUEVO: Cargar la ficha bibliográfica asociada al libro
-     */
+
     private void cargarFichaBibliografica(Libro libro, Connection conn) throws Exception {
         String sql = "SELECT * FROM fichas_bibliograficas WHERE id_libro = ? AND eliminado = false";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -127,9 +120,8 @@ public class LibroDao implements GenericDAO<Libro> {
         }
     }
     
-    /**
-     * Mapea un ResultSet a un objeto Libro
-     */
+    // Mapea un ResultSet a un objeto Libro
+
     private Libro mapearLibro(ResultSet rs) throws SQLException {
         Libro libro = new Libro();
         libro.setId(rs.getLong("id"));
@@ -137,7 +129,6 @@ public class LibroDao implements GenericDAO<Libro> {
         libro.setTitulo(rs.getString("titulo"));
         libro.setAutor(rs.getString("autor"));
         libro.setEditorial(rs.getString("editorial"));
-        // 🔧 FIX: Nombre correcto de columna con guión bajo
         libro.setAnioEdicion(rs.getInt("anio_edicion"));
         return libro;
     }
