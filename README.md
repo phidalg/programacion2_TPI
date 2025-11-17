@@ -1,16 +1,18 @@
-#  Sistema de Gestión de Biblioteca - TPI Programación 2
+#  Sistema de Gestión de Biblioteca - TFI Programación 2
+Trabajo Final Integrador de Programación II - Tecnicatura Universitaria en Programación - Universidad Tecnológica Nacional
 
 ## Descripción del Proyecto
 
-Sistema de gestión bibliotecaria que permite administrar libros y sus fichas bibliográficas mediante una arquitectura en capas con manejo de transacciones ACID.
+Sistema de gestión bibliotecaria que permite administrar libros y sus fichas bibliográficas mediante una arquitectura en capas con manejo de transacciones ACID, desarrollado en Java con conexión a base de datos MySQL.
 
 ### Dominio del Proyecto
 
-El sistema gestiona una **biblioteca** donde:
-- Cada **Libro** contiene información básica (título, autor, editorial, año de edición)
-- Cada **Ficha Bibliográfica** contiene datos catalográficos (ISBN, clasificación Dewey, estantería, idioma)
-- Existe una relación **1:1** entre Libro y Ficha Bibliográfica
-- Se implementa **baja lógica** para mantener historial de datos
+El sistema gestiona una biblioteca donde:
+- Cada Libro contiene información básica (título, autor, editorial, año de edición)
+- Cada Ficha Bibliográfica contiene datos catalográficos (ISBN, clasificación Dewey, estantería, idioma)
+- Existe una relación 1:1 entre Libro y Ficha Bibliográfica
+- Se implementa baja lógica para mantener historial de datos
+- Se valida con el código ISBN que por cada edicion de un libro solo hay una ficha bibliográfica
 - 
 ### Software Necesario
 
@@ -157,8 +159,8 @@ prog2_TPI/
 
 ### Diagrama de Relación
 ```
-┌─────────────┐          1:1          ┌──────────────────────┐
-│   Libro     │◄─────────────────────►│ FichaBibliografica   │
+┌─────────────┐          1:1           ┌──────────────────────┐
+│   Libro     │◄──────────────────────►│ FichaBibliografica   │
 ├─────────────┤                        ├──────────────────────┤
 │ id (PK)     │                        │ id (PK)              │
 │ titulo      │                        │ isbn (UNIQUE)        │
@@ -198,12 +200,25 @@ prog2_TPI/
 
 ##  Equipo de Desarrollo
 
-| Integrante           | Responsabilidades |
-|----------------------|-------------------|
-| **Pedro**            |  
-| **Joaquín Escobar**  |  
-| **Fiorela**          |  
-| **Martín Gómez**     |  
+**Pedro Hidalgo**
+
+- Diseño y creación de la Base de datos
+- Desarrollo de capa de modelo en Java
+
+**Joaquín Escobar**
+
+- 
+- 
+
+**Fiorela**
+
+- 
+- 
+
+**Martín Gómez**
+
+- 
+- 
 
 ---
 
