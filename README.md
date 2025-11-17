@@ -216,7 +216,7 @@ prog2_TPI/
 | Integrante           | Responsabilidades |
 |----------------------|-------------------|
 | **Pedro**            |  
-| **Joaquín Escobedo** |  
+| **Joaquín Escobar**  |  
 | **Fiorela**          |  
 | **Martín Gómez**     |  
 
