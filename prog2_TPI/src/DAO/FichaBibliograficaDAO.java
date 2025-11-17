@@ -22,10 +22,8 @@ public class FichaBibliograficaDAO implements GenericDAO<FichaBibliografica> {
             // Por ahora id_libro es NULL, se establece cuando se asocia a un Libro
             stmt.setObject(5, null);
             
-            //  FIX: Ejecutar el INSERT
             stmt.executeUpdate();
             
-            //  FIX: Obtener el ID generado
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
                     fb.setId(rs.getLong(1));
@@ -34,9 +32,8 @@ public class FichaBibliograficaDAO implements GenericDAO<FichaBibliografica> {
         }
     }
     
-    /**
-     * Crear ficha Y asociarla a un libro (para transacciones)
-     */
+    // Crear ficha Y asociarla a un libro (para transacciones)
+
     public void crearConLibro(FichaBibliografica fb, Long idLibro, Connection conn) throws Exception {
         String sql = "INSERT INTO fichas_bibliograficas(isbn, clasificacion_dewey, estanteria, idioma, id_libro, eliminado) VALUES (?, ?, ?, ?, ?, false)";
         try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -107,9 +104,8 @@ public class FichaBibliograficaDAO implements GenericDAO<FichaBibliografica> {
         }
     }
     
-    /**
-     *  NUEVO: Buscar ficha por ISBN
-     */
+    // Buscar ficha por ISBN
+     
     public FichaBibliografica buscarPorIsbn(String isbn, Connection conn) throws Exception {
         String sql = "SELECT * FROM fichas_bibliograficas WHERE isbn = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -123,15 +119,13 @@ public class FichaBibliograficaDAO implements GenericDAO<FichaBibliografica> {
         return null;
     }
     
-    /**
-     * Mapea un ResultSet a un objeto FichaBibliografica
-     */
+    // Mapea un ResultSet a un objeto FichaBibliografica
+
     public FichaBibliografica mapearFicha(ResultSet rs) throws SQLException {
         FichaBibliografica fb = new FichaBibliografica();
         fb.setId(rs.getLong("id"));
         fb.setEliminado(rs.getBoolean("eliminado"));
         fb.setIsbn(rs.getString("isbn"));
-        // 🔧 FIX: Nombre correcto de columna con guión bajo
         fb.setClasificacionDewey(rs.getString("clasificacion_dewey"));
         fb.setEstanteria(rs.getString("estanteria"));
         fb.setIdioma(rs.getString("idioma"));
