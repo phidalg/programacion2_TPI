@@ -96,7 +96,6 @@ public class FichaBibliograficaDAO implements GenericDAO<FichaBibliografica> {
     
     @Override
     public void eliminar(Long id, Connection conn) throws Exception {
-        // 🔧 FIX: Nombre correcto de tabla
         String sql = "UPDATE fichas_bibliograficas SET eliminado = true WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setLong(1, id);
