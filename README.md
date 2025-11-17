@@ -207,18 +207,18 @@ prog2_TPI/
 
 **Joaquín Escobar**
 
-- 
-- 
+- Desarrollo de capa de Servicios y Transacciones
+- Desarrollo del menú de la app
 
-**Fiorela**
+**Fiorela García**
 
-- 
-- 
+- Desarrollo de capa de Servicios y Transacciones
+- Documentación y UML
+- Desarrollo de Pruebas Unitarias
 
 **Martín Gómez**
 
-- 
-- 
+- Desarrollo de capa DAO
 
 ---
 
