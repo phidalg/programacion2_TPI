@@ -196,7 +196,7 @@ prog2_TPI/
 
 ##  Video Demostrativo
 
-[Link al video en YouTube/Drive](https://drive.google.com/file/d/1XfOw8H207NRFcg9tgyDi_-waGZf4cMFE/view?usp=sharing)
+[Link al video en Drive](https://drive.google.com/file/d/1XfOw8H207NRFcg9tgyDi_-waGZf4cMFE/view?usp=sharing)
 
 ##  Equipo de Desarrollo
 
