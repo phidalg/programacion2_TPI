@@ -13,7 +13,7 @@ El sistema gestiona una biblioteca donde:
 - Existe una relación 1:1 entre Libro y Ficha Bibliográfica
 - Se implementa baja lógica para mantener historial de datos
 - Se valida con el código ISBN que por cada edicion de un libro solo hay una ficha bibliográfica
-- 
+  
 ### Software Necesario
 
 | Componente            | Versión Mínima | Versión Recomendada |
@@ -196,7 +196,7 @@ prog2_TPI/
 
 ##  Video Demostrativo
 
-[Link al video en YouTube/Drive](PEGAR_LINK)
+[Link al video en YouTube/Drive](https://drive.google.com/file/d/1XfOw8H207NRFcg9tgyDi_-waGZf4cMFE/view?usp=sharing)
 
 ##  Equipo de Desarrollo
 
