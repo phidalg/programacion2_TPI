@@ -40,18 +40,12 @@ cd programacion2_TPI
 ### Desde phpMyAdmin (XAMPP)
 
 1. Iniciar **XAMPP** (Apache + MySQL)
-2. Abrir navegador en `http://localhost/phpmyadmin`
-3. Crear base de datos:
-   - Click en **"Nueva"**
-   - Nombre: `prog2_tpi`
-   - Collation: `utf8mb4_general_ci`
-   - Click en **"Crear"**
+2. Abrir `http://localhost/phpmyadmin`
+3. Crear base de datos
 4. Importar scripts:
-   - Seleccionar base `prog2_tpi`
-   - Tab **"Importar"**
-   - Seleccionar archivo `sql/BBDD.sql`
-   - Click en **"Continuar"**
-   - Repetir con `sql/datos_de_prueba.sql`
+   - `sql/BBDD.sql`
+   
+   - `sql/datos_de_prueba.sql`
 
 ### 3. Configurar Credenciales de Base de Datos
 
@@ -59,11 +53,11 @@ Editar el archivo `prog2_TPI/src/config/db.properties`:
 ```properties
 db.url=jdbc:mysql://localhost:3306/prog2_tpi?useSSL=false&serverTimezone=UTC
 db.user=root
-db.password=TU_CONTRASEÑA_MYSQL_AQUI
+db.password=TU_CONTRASEÑA_MYSQL
 db.driver=com.mysql.cj.jdbc.Driver
 ```
 
-**IMPORTANTE:** Reemplazar `TU_CONTRASEÑA_MYSQL_AQUI` con tu contraseña real de MySQL.
+**IMPORTANTE:** Reemplazar `TU_CONTRASEÑA_MYSQL` con tu contraseña real de MySQL.
 
 ---
 
@@ -71,7 +65,7 @@ db.driver=com.mysql.cj.jdbc.Driver
 
 ### Desde Apache NetBeans
 
-1. Abrir **NetBeans IDE**
+1. Abrir **NetBeans**
 2. `File → Open Project` → Seleccionar carpeta `programacion2_TPI`
 3. **Agregar MySQL Connector** (si no está):
    - Clic derecho en el proyecto → `Properties`
@@ -202,15 +196,6 @@ prog2_TPI/
 
 [Link al video en YouTube/Drive](PEGAR_LINK)
 
-**Contenido del video:**
-- Presentación del equipo
-- Demostración de funcionalidades CRUD
-- Explicación de arquitectura en capas
-- Demo de transacciones ACID
-- Evidencia de rollback ante fallos
-
----
-
 ##  Equipo de Desarrollo
 
 | Integrante           | Responsabilidades |
@@ -222,7 +207,7 @@ prog2_TPI/
 
 ---
 
-## 🐛 Solución de Problemas
+##  Solución de Problemas
 
 ### Error: "Access denied for user 'root'@'localhost'"
 **Solución:** Verificar contraseña en `db.properties`
